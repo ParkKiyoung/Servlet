@@ -35,7 +35,7 @@ function getSearch(pageNum,field,word){//검색부분
 	$("#result").load("search",{"pageNum":pageNum,"field":field,"word":word},function(data){
 		$("#result").html(data);
 	})
-}
+};
 function getData(pageNum){//일반 리스트 출력
 	$("#result").load("list",{"pageNum":pageNum},function(data){
 		$("#result").html(data);
@@ -135,7 +135,7 @@ ${sessionScope.mdto.name }(${sessionScope.mdto.id})님 환영합니다.
 	<div align = center>
 	<form action="" name = "search" id = search>
 	<select name = "field" id = "field">
-	<option value = "name">이름</option>
+	<option value = "name">글쓴이</option>
 	<option value = "content">내용</option>
 	</select>
 	<input type = "text" name = "word" id = "word">
