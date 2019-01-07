@@ -14,6 +14,9 @@
 	FileInputStream in = new FileInputStream(sFilePath);
 	String sMimeType = getServletContext().getMimeType(sFilePath);
 	System.out.println("sMimeType>>>"+sMimeType);
+	out.clear();
+	out = pageContext.pushBody();
+	//자동적으로 만들어진 output을 삭제함
 	
 	if(sMimeType==null)
 		sMimeType = "application/octet-stream";
@@ -30,7 +33,7 @@
 	}
 	
 	response.setHeader("Content-Disposition", "attachment; filename= "+fileName);
-	
+	out.close();
 	ServletOutputStream out2 = response.getOutputStream();
 	int numRead;
 	
