@@ -33,7 +33,6 @@
 	}
 	
 	response.setHeader("Content-Disposition", "attachment; filename= "+fileName);
-	out.close();
 	ServletOutputStream out2 = response.getOutputStream();
 	int numRead;
 	
