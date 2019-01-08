@@ -56,7 +56,6 @@ public class GuestDAO {
 	}
 	public ArrayList<GuestDTO> guestList(int startRow, int endRow) {
 		Connection con = null;
-		Statement st = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ArrayList<GuestDTO> arr = new ArrayList<>();
@@ -81,7 +80,7 @@ public class GuestDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			closeCon(con,st,rs);
+			closeCon(con,ps,rs);
 		}
 		return arr;
 	}
